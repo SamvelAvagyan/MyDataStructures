@@ -20,6 +20,16 @@ namespace MyDataStructures
             {
                 Console.Write(item + " ");
             }
+
+            list.RemoveLast();
+            list.RemoveFirst();
+
+            Console.WriteLine("\n==================================");
+
+            foreach (var item in list)
+            {
+                Console.Write(item + " ");
+            }
         }
     }
 }

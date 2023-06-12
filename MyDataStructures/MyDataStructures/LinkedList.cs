@@ -34,7 +34,7 @@ namespace MyDataStructures
         {
             var node = new Node<T>(data);
 
-            if(IsEmpty)
+            if (IsEmpty)
             {
                 _head = node;
                 _tail = _head;
@@ -50,7 +50,7 @@ namespace MyDataStructures
 
         public void AddAfter(T target, T data)
         {
-            if(IsEmpty)
+            if (IsEmpty)
             {
                 throw new NullReferenceException("List is empty");
             }
@@ -75,6 +75,76 @@ namespace MyDataStructures
             }
         }
 
+        public void Remove(T data)
+        {
+            if (IsEmpty)
+            {
+                throw new NullReferenceException("List is empty");
+            }
+            else
+            {
+                if (_head.Data.Equals(data))
+                {
+                    _head = _head.Next;
+                    Count--;
+                    return;
+                }
+
+                var current = _head.Next;
+                var previous = _head;
+
+                while(current != null)
+                {
+                    if(current.Data.Equals(data))
+                    {
+                        previous.Next = current.Next;
+                        Count--;
+                        return;
+                    }
+
+                    previous = current;
+                    current = current.Next;
+                }
+            }
+        }
+
+        public void RemoveFirst()
+        {
+            if (IsEmpty)
+            {
+                throw new NullReferenceException("List is empty");
+            }
+            else
+            {
+                _head = _head.Next;
+                Count--;
+                return;
+            }
+        }
+
+        public void RemoveLast()
+        {
+            if (IsEmpty)
+            {
+                throw new NullReferenceException("List is empty");
+            }
+            else
+            {
+                var current = _head;
+                Node<T> preLast = null;
+
+                while(current.Next != null)
+                {
+                    preLast = current;
+                    current = current.Next;
+                }
+
+                preLast.Next = null;
+                _tail = preLast;
+                Count--;
+            }
+        }
+
         public void Clear()
         {
             InitiateList();
@@ -91,7 +161,7 @@ namespace MyDataStructures
         {
             var current = _head;
 
-            while(current != null)
+            while (current != null)
             {
                 yield return current.Data;
                 current = current.Next;
