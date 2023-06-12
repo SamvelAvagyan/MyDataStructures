@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MyDataStructures
 {
@@ -6,30 +7,18 @@ namespace MyDataStructures
     {
         static void Main(string[] args)
         {
-            System.Collections.Generic.LinkedList<int> linkedList;
-            LinkedList<int> list = new LinkedList<int>();
-            list.AddLast(10);
-            list.AddLast(11);
-            list.AddLast(12);
-            list.AddFirst(5);
-            list.AddAfter(11, 20);
-            list.AddAfter(12, 25);
-            list.AddAfter(1100, 17);
+            StackOnArray<int> stack = new StackOnArray<int>(5);
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
 
-            foreach (var item in list)
-            {
-                Console.Write(item + " ");
-            }
-
-            list.RemoveLast();
-            list.RemoveFirst();
-
-            Console.WriteLine("\n==================================");
-
-            foreach (var item in list)
-            {
-                Console.Write(item + " ");
-            }
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Peek());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Peek());
+            Console.WriteLine(stack.Peek());
         }
     }
 }
