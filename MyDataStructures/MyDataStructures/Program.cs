@@ -7,19 +7,10 @@ namespace MyDataStructures
     {
         static void Main(string[] args)
         {
-            DynamicStack<int> stack = new DynamicStack<int>();
-            stack.Push(1);
-            stack.Push(2);
-            stack.Push(3);
-            stack.Push(4);
-            stack.Push(5);
-
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Peek());
-            Console.WriteLine(stack.Peek());
-            Console.WriteLine(stack.Peek());
+            HashTable<string, int> hashTable = new HashTable<string, int>(10);
+            hashTable.Add("Armen", 18);
+            hashTable.Add("Ashot", 27);
+            hashTable.Add("Vardges", 35);
         }
     }
 }
