@@ -7,16 +7,17 @@ namespace MyDataStructures
     {
         static void Main(string[] args)
         {
-            StackOnArray<int> stack = new StackOnArray<int>(5);
+            DynamicStack<int> stack = new DynamicStack<int>();
             stack.Push(1);
             stack.Push(2);
             stack.Push(3);
             stack.Push(4);
+            stack.Push(5);
 
             Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
             Console.WriteLine(stack.Peek());
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
             Console.WriteLine(stack.Peek());
             Console.WriteLine(stack.Peek());
         }
