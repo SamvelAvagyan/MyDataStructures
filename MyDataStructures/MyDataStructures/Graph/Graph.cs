@@ -49,5 +49,26 @@ namespace MyDataStructures.Graph
 
             return list;
         }
+
+        public bool Wave(Vertex v1, Vertex v2)
+        {
+            var list = new List<Vertex>();
+            list.Add(v1);
+
+            for(int i = 0; i < list.Count; i++)
+            {
+                var v = list[i];
+
+                foreach (var vertex in this.GetVertexList(v))
+                {
+                    if (!list.Contains(vertex))
+                    {
+                        list.Add(vertex);
+                    }
+                }
+            }
+
+            return list.Contains(v2);
+        }
     }
 }

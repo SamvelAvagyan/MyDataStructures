@@ -56,6 +56,11 @@ namespace MyDataStructures
             {
                 Console.Write($"{vertex.Number} ");
             }
+
+            Console.WriteLine();
+
+            Console.WriteLine(graph.Wave(v1, v5));
+            Console.WriteLine(graph.Wave(v5, v3));
         }
     }
 }
